@@ -1,29 +1,28 @@
-function Badge ({important,pending}:{important: boolean,pending: boolean}) {
+import { useAppDispatch } from "../Store/hooks";
+import { Note, UpdateNote, updateNote } from "../Store/notesSlice";
+
+function Badge (note:Note) {
+    const dispatch = useAppDispatch();
+
+    const handleClick = (data:UpdateNote) => {
+        dispatch(updateNote(data))
+    }
+
     return (
         <div className="d-flex gap-2">
             <div className="form-check p-0">
-                <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="radioImportant"
-                    checked={important}
-                    hidden
-                />
-                <label className={`form-check-label badge rounded-pill ${important ? "text-bg-warning" : "text-bg-secondary"}`} htmlFor="radioImportant">
+                <button
+                    onClick={() => handleClick({...note,important:!note.important})}
+                    className={`form-check-label badge rounded-pill ${note.important ? "text-bg-warning" : "text-bg-secondary"}`}>
                     Importante
-                </label>
+                </button>
             </div>
             <div className="form-check p-0">
-                <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="radioPending"
-                    checked={pending}
-                    hidden
-                />
-                <label className={`form-check-label badge rounded-pill ${pending ? "text-bg-primary" : "text-bg-secondary"}`} htmlFor="radioPending">
+                <button 
+                    onClick={() => handleClick({...note,pending:!note.pending})}
+                    className={`form-check-label badge rounded-pill ${note.pending ? "text-bg-primary" : "text-bg-secondary"}`}>
                     Pendiente
-                </label>
+                </button>
             </div>
         </div>
     )
