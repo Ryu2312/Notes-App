@@ -6,7 +6,7 @@ function App() {
   
   return (
     <>
-      <div className="container mt-4 col-xxl-8">
+      <div className="container mt-4 col-xl-8">
         <div className="row d-flex justify-content-center">
           <div className="col-lg-5 col-md-8 col-10 "> 
             <h1 className="mb-3 text-center">Notas App</h1>

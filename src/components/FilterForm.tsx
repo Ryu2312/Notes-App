@@ -16,8 +16,7 @@ return (
               <div className="form-check">
                 <input
                   className="form-check-input"
-                  type="radio"
-                  name="order"
+                  type="checkbox"
                   id="radioAsc"
                   value="pending"
                 />
@@ -28,8 +27,7 @@ return (
               <div className="form-check">
                 <input
                   className="form-check-input"
-                  type="radio"
-                  name="order"
+                  type="checkbox"
                   id="radioDesc"
                   value="important"
                 />

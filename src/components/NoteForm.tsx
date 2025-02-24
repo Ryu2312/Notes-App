@@ -18,7 +18,7 @@
             placeholder="Escribe tu nota"
           ></textarea>
         </div>
-        <button type="submit" className="btn btn-success col-12  p-2">Agregar Nota</button>
+        <button type="submit" className="btn btn-primary col-12  p-2">Agregar Nota</button>
       </form>
     )
 }
