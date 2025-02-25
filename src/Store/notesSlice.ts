@@ -96,7 +96,7 @@ export interface Note {
   id: number;
   title: string;
   body: string;
-  createDate: string;
+  creationDate: string;
   updateDate: string;
   important: boolean;
   pending: boolean;

@@ -1,12 +1,9 @@
-import { Note } from "../Store/notesSlice";
-import { filtersNotes } from "../utils/filterUtils";
 
-function FilterForm ({filters}:{filters:React.Dispatch<React.SetStateAction<Note[]>>}) {
+function FilterForm ({filters}:{filters:React.Dispatch<React.SetStateAction<{ [k: string]: FormDataEntryValue; }>>}) {
   
   const handleChange = (e:React.FormEvent<HTMLFormElement>) => {
     const field = Object.fromEntries(new FormData(e.currentTarget));
-    const notes = filtersNotes(field)
-    filters(notes)
+    filters(field)
   }
   
   

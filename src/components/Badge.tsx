@@ -12,6 +12,7 @@ function Badge (note:Note) {
         <div className="d-flex gap-2">
             <div className="form-check p-0">
                 <button
+                    type="button"
                     onClick={() => handleClick({...note,important:!note.important})}
                     className={`form-check-label badge rounded-pill ${note.important ? "text-bg-warning" : "text-bg-secondary"}`}>
                     Importante
@@ -19,6 +20,7 @@ function Badge (note:Note) {
             </div>
             <div className="form-check p-0">
                 <button 
+                    type="button"
                     onClick={() => handleClick({...note,pending:!note.pending})}
                     className={`form-check-label badge rounded-pill ${note.pending ? "text-bg-primary" : "text-bg-secondary"}`}>
                     Pendiente
